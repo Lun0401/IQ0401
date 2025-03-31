@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗結果</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>測驗結果分析中...</h1>
+        <p id="loading">AI 正在計算你的智商，請稍等...</p>
+        <p id="result" style="display: none;"></p>
+    </div>
+
+    <script>
+        const fakeResults = [
+            "你的 IQ 超過 300！你可能是外星人！",
+            "測試結果：你的智商等於愚人節日期（4月1日），天選之人！",
+            "AI 分析結果：你的腦袋已經超越 AI！",
+            "你是全世界最聰明的人之一，但這是愚人節玩笑 😆"
+        ];
+
+        setTimeout(() => {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("result").innerText = fakeResults[Math.floor(Math.random() * fakeResults.length)];
+            document.getElementById("result").style.display = "block";
+        }, 5000);
+    </script>
+</body>
+</html>
