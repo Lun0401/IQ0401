@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智商測驗 - 作答中</title>
+    <title>你懂綸，綸就會幫你 - 作答中</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>智商測驗</h1>
+        <h1>你懂綸，綸就會幫你</h1>
         <p id="question">載入題目中...</p>
         <div id="options"></div>
         <button id="next-btn" onclick="nextQuestion()">下一題</button>
@@ -16,10 +16,10 @@
 
     <script>
         const questions = [
-            { question: "1, 3, 5, 7, __？", options: ["8", "9", "10", "11"] },
-            { question: "哪個圖形與其他不同？", options: ["⚪", "🔺", "🔷", "🟪"] },
-            { question: "世界上最長的河流是？", options: ["尼羅河", "亞馬遜河", "長江", "密西西比河"] },
-            { question: "光速是多少？", options: ["300,000 km/s", "150,000 km/s", "1,000,000 km/s", "299,792 km/s"] }
+            { question: "綸最喜歡的酒？", options: ["伏特加", "琴酒", "威士忌", "以上皆是"] },
+            { question: "誰最帥？", options: ["曜綸", "秩維", "建堂", "泓翰"] },
+            { question: "綸最喜歡的城市？", options: ["高雄", "台南", "台中", "新竹"] },
+            { question: "你知道今天誰生日哪？", options: ["貼心綸", "風火綸", "郭阿綸", "新竹攻城獅"] }
         ];
         
         let currentQuestion = 0;
