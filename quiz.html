@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智商測驗 - 作答中</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>智商測驗</h1>
+        <p id="question">載入題目中...</p>
+        <div id="options"></div>
+        <button id="next-btn" onclick="nextQuestion()">下一題</button>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "1, 3, 5, 7, __？", options: ["8", "9", "10", "11"] },
+            { question: "哪個圖形與其他不同？", options: ["⚪", "🔺", "🔷", "🟪"] },
+            { question: "世界上最長的河流是？", options: ["尼羅河", "亞馬遜河", "長江", "密西西比河"] },
+            { question: "光速是多少？", options: ["300,000 km/s", "150,000 km/s", "1,000,000 km/s", "299,792 km/s"] }
+        ];
+        
+        let currentQuestion = 0;
+        function loadQuestion() {
+            if (currentQuestion >= questions.length) {
+                window.location.href = "result.html";
+                return;
+            }
+            document.getElementById("question").innerText = questions[currentQuestion].question;
+            const optionsDiv = document.getElementById("options");
+            optionsDiv.innerHTML = "";
+            questions[currentQuestion].options.forEach(option => {
+                const button = document.createElement("button");
+                button.innerText = option;
+                button.onclick = nextQuestion;
+                optionsDiv.appendChild(button);
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
