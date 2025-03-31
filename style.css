@@ -27,3 +27,7 @@ button {
 button:hover {
     background: #0056b3;
 }
+
+#nextButton {
+    display: none;
+}
